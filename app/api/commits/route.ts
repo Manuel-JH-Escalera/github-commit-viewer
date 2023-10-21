@@ -10,7 +10,8 @@ export async function GET(request:Request) {
         repo: 'github-commit-viewer',
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
-        }
+        },
+        per_page: 100
     });
 
     return new Response(JSON.stringify(response.data), {
