@@ -11,10 +11,13 @@ export async function GET(request:Request) {
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
         },
-        per_page: 100
+        per_page:100,
+        page: 1,
     });
 
-    return new Response(JSON.stringify(response.data), {
+    const reversedData = response.data.reverse();
+    
+    return new Response(JSON.stringify(reversedData), {
         headers: { 'Content-Type': 'application/json' },
     });
 }
