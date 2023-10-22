@@ -30,21 +30,19 @@ export interface GitHubCommit {
     commit: GitHubCommitDetails;
 }
 
-async function getCommits() {
-    const response = await fetch('http://localhost:3000/api/commits', { cache: 'no-store' });
-    const data =  await response.json()
-    return data
-}
+async function CommitsTimeline() {
 
-export default async function CommitsTimeline() {
+    async function getCommits() {
+        const response = await fetch('http://localhost:3000/api/commits', { cache: 'no-store' });
+        const data = await response.json()
+        return data
+    }
 
     const commits = await getCommits();
 
     return (
-        <>
-            <div>CommitTimeline</div>
-            <OppositeContentTimeline commits={commits}/>
-        </>
-
+        <OppositeContentTimeline commits={commits} />
     )
 }
+
+export default CommitsTimeline;
