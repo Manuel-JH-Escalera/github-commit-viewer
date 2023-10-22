@@ -41,7 +41,11 @@ async function CommitsTimeline() {
     const commits = await getCommits();
 
     return (
-        <OppositeContentTimeline commits={commits} />
+        <div className="text-center">
+            <span className="text-xl text-green-700 dark:text-blue-200">Start of the project</span>
+            <OppositeContentTimeline commits={commits} />
+            <span className="text-xl text-green-700 dark:text-blue-200">End of the project</span>
+        </div>
     )
 }
 

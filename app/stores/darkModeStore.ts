@@ -8,7 +8,7 @@ type DarkModeState = {
 };
 
 const useDarkModeStore = create<DarkModeState>((set) => ({
-  isDarkMode: true,
+  isDarkMode: false,
   toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
   enableDarkMode: () => set({ isDarkMode: true }),
   disableDarkMode: () => set({ isDarkMode: false }),
