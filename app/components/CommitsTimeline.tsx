@@ -33,7 +33,8 @@ export interface GitHubCommit {
 async function CommitsTimeline() {
 
     async function getCommits() {
-        const response = await fetch('http://localhost:3000/api/commits', { cache: 'no-store' });
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+        const response = await fetch(apiUrl, { cache: 'no-store' });
         if (!response.ok) return false
         const data = await response.json()
         return data
