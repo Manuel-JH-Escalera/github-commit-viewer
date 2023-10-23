@@ -65,6 +65,8 @@ function OppositeContentTimeline({ commits }: OppositeContentTimelineProps) {
         });
     }
 
+    if(!commits) return <h1>No fue posible obtener los commits del proyecto</h1>
+
     return (
         <ThemeProvider theme={theme}>
             <Timeline position="alternate-reverse">

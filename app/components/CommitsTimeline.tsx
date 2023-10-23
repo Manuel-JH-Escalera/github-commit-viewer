@@ -34,11 +34,19 @@ async function CommitsTimeline() {
 
     async function getCommits() {
         const response = await fetch('http://localhost:3000/api/commits', { cache: 'no-store' });
+        if (!response.ok) return false
         const data = await response.json()
         return data
     }
 
     const commits = await getCommits();
+
+    if(!commits || !commits.length) {
+        return (
+            <h1 className="text-4xl text-center text-green-700 dark:text-blue-200">
+            No fue posible obtener los commits del proyecto
+            </h1>
+        )}
 
     return (
         <div className="text-center">
