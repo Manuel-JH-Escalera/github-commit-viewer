@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## LIVE VERSION
+
+## [https://github-commit-viewer-rouge.vercel.app/](https://github-commit-viewer-rouge.vercel.app/)
+
 
 ## Getting Started
 
-First, run the development server:
+
+### Initial Setup
+Before you begin, make sure to set up your `.env` file. A template for this file can be found at the root of the project named `env.example`. Copy and rename this file to `.env` and configure the environment variables as per your project's requirements.
+
+### Installing Dependencies
+Install the project dependencies with the following command:
+
+```bash
+npm install
+```
+### Start project
+Run the development server with the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+finally visit [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Preparativos iniciales
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Inicio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Antes de empezar, asegúrate de preparar tu archivo .env. Un template del mismo se encuentra en la raíz del proyecto bajo el nombre env.example. Copia y renombra este archivo a .env y configura las variables de entorno según las necesidades de tu proyecto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Instalación de dependencias
 
-## Deploy on Vercel
+Instala las dependencias del proyecto con el siguiente comando:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Ejecución en modo de desarrollo
+
+Una vez que hayas configurado todo, puedes iniciar el servidor de desarrollo con:
+
+```bash
+npm run dev
+```
+
+
+Después de iniciar el servidor, visita [http://localhost:3000](http://localhost:3000) para ver el resultado en tu navegador.
