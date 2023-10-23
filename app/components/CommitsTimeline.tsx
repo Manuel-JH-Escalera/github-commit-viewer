@@ -30,24 +30,23 @@ export interface GitHubCommit {
     commit: GitHubCommitDetails;
 }
 
-async function CommitsTimeline() {
 
-    async function getCommits() {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-        const response = await fetch(apiUrl, { cache: 'no-store' });
-        if (!response.ok) return false
-        const data = await response.json()
-        return data
-    }
+const getCommits = async() => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    return fetch(apiUrl+"/api/commits", { cache: 'no-store' })
+    .then(res => res.json())
+    .catch(error => console.error(error))
+}
 
+export default async function CommitsTimeline() {
     const commits = await getCommits();
-
-    if(!commits || !commits.length) {
+    if (!commits || !commits.length) {
         return (
             <h1 className="text-4xl text-center text-green-700 dark:text-blue-200">
-            No fue posible obtener los commits del proyecto
+                No fue posible obtener los commits del proyecto
             </h1>
-        )}
+        );
+    }
 
     return (
         <div className="text-center">
@@ -55,7 +54,5 @@ async function CommitsTimeline() {
             <OppositeContentTimeline commits={commits} />
             <span className="text-xl text-green-700 dark:text-blue-200">End of the project</span>
         </div>
-    )
+    );
 }
-
-export default CommitsTimeline;
